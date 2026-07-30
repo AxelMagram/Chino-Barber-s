@@ -35,3 +35,7 @@ Thumbs.db
 # ---- Archivos de prueba temporales ----
 /tmp/
 *.tmp
+
+# ---- Documentos de prompts (no van al repo) ----
+prompt antes de ser pasado por ia.txt
+prompt DESPUES de ser pasado por ia.txt

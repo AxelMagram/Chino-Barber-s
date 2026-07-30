@@ -1,0 +1,14 @@
+# Sistema de Gestión de Turnos - Chino Barber
+# Instalar con: pip install -r requirements.txt
+
+Django==5.2.16
+
+# Exportación de reportes (Paso 8)
+openpyxl==3.1.5        # Excel (.xlsx)
+reportlab==4.2.5       # PDF
+
+# Notificaciones SMS (Paso 9) - requiere credenciales
+twilio==9.3.7
+
+# Nota: Tailwind CSS se carga por CDN en templates/base.html (sin build).
+# Base de datos: SQLite (incluido en Python, sin dependencias extra).

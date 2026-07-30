@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Chino Barber{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              marca: { DEFAULT: '#c8a24a', dark: '#8f7223' },
+              carbon: '#1a1a1a',
+            },
+            fontFamily: { display: ['Georgia', 'serif'] },
+          }
+        }
+      }
+    </script>
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-carbon text-gray-100 min-h-screen flex flex-col">
+
+    <!-- Barra de navegación superior -->
+    <nav class="bg-black/90 backdrop-blur sticky top-0 z-50 border-b border-marca/30">
+        <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
+            <a href="{% url 'clientes:inicio' %}" class="text-2xl font-display font-bold text-marca tracking-wide">
+                Chino&nbsp;Barber
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest">
+                <a href="{% url 'clientes:inicio' %}" class="hover:text-marca transition">Inicio</a>
+                <a href="{% url 'clientes:sobre_nosotros' %}" class="hover:text-marca transition">Sobre Nosotros</a>
+                <a href="#reservas" class="hover:text-marca transition">Turnos</a>
+                <a href="{% url 'barberos:login' %}"
+                   class="px-4 py-2 border border-marca text-marca rounded hover:bg-marca hover:text-black transition">
+                    Acceso Barberos
+                </a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-marca text-2xl">&#9776;</button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-black px-4 pb-4 flex-col gap-3 text-sm uppercase tracking-widest">
+            <a href="{% url 'clientes:inicio' %}" class="block py-2 hover:text-marca">Inicio</a>
+            <a href="{% url 'clientes:sobre_nosotros' %}" class="block py-2 hover:text-marca">Sobre Nosotros</a>
+            <a href="#reservas" class="block py-2 hover:text-marca">Turnos</a>
+            <a href="{% url 'barberos:login' %}" class="block py-2 text-marca">Acceso Barberos</a>
+        </div>
+    </nav>
+
+    {% if messages %}
+    <div class="max-w-6xl mx-auto w-full px-4 mt-4 space-y-2">
+        {% for m in messages %}
+        <div class="px-4 py-3 rounded text-sm {% if m.tags == 'error' %}bg-red-900/60 text-red-100{% else %}bg-marca/20 text-marca{% endif %}">
+            {{ m }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <main class="flex-1">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-black border-t border-marca/20 text-gray-400 text-center py-6 text-sm">
+        Chino Barber &middot; Lun a Sáb 9:00 – 19:00 &middot; © {% now "Y" %}
+    </footer>
+
+    <script>
+        const btn = document.getElementById('menuBtn');
+        const menu = document.getElementById('mobileMenu');
+        if (btn) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    </script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

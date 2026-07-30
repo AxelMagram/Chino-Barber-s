@@ -1,0 +1,17 @@
+hoy quiero diseñar una pagina con python, django y tailwind. 
+nuestro cliente es dueño de una barberia y necesitamos cubrir dos necesidades.
+
+1: brindar una pagina para que los clientes puedan seleccionar a que hora ir a cortarse el pelo(30 min), o hacerse una tintura(90 min y es con confirmacion del peluquero), o afeitarse(30 min).
+cada tarea tiene su tiempo estimado que ocupa.
+al ser confirmado por el peluquero el turno, el sistema debe enviar un sms al cliente o notificarle unas horas antes del turno.
+antes de seleccionar los turnos la pagina tiene que tener unas imagenes de cortes de cabello que vayan cambiando mientras escrolleas hacia abajo, y luego los turnos.
+para un acceso mas facil. tiene que tener un nav bar con los elementos: Inicio, Sobre nosotros, Turnos, Acceso Barberos.
+el Acceso Barberos es lo que nos redirecciona al punto 2.
+
+
+2: brindarle un dashboard donde pueda ver un grafico con los cortes que lleva, las tinturas que lleva, el dinero que va ganando, y el tiempo que esta invirtiendo.
+ademas en la misma pagina tiene que poder editar los turnos, confirmarlos, cambiar el horario y notificar al cliente del cambio.
+en cuanto hacemos click a la solapa "Acceso Barberos" debe pedirnos usuario y contraseña y debe ser seguro.
+
+
+

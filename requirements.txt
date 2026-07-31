@@ -3,6 +3,9 @@
 
 Django==5.2.16
 
+# Campos de imagen (foto de barbero, galería) - Paso 2 y 4
+Pillow==11.0.0
+
 # Exportación de reportes (Paso 8)
 openpyxl==3.1.5        # Excel (.xlsx)
 reportlab==4.2.5       # PDF
